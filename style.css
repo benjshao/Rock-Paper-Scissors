@@ -1,0 +1,56 @@
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 65px;
+}
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+}
+.buttons {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.icon {
+    width: 100px;
+    height: 100px;
+}
+.button-background {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.button-background:hover {
+    background-color: #ececec;
+}
+button {
+    background: white;
+    border: none;
+    cursor: pointer;
+}
+#message {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.score {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+#final-score {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

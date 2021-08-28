@@ -1,49 +1,82 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * 3)];
 }
 
-function playRound(playerScore, computerScore) {
+function playRound(playerChoice) {
     const computerChoice = computerPlay();
-    const playerChoice = prompt("Rock, paper, scissors!");
     if (playerChoice.toLowerCase() == "rock" && computerChoice == "scissors") {
         playerScore++; 
-        console.log("You win! Rock beats Scissors.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You win! Rock beats Scissors.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore;
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == "rock" && computerChoice == "paper") {
         computerScore++;
-        console.log("You lose! Paper beats Rock.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You lose! Paper beats Rock.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore;
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == "paper" && computerChoice == "rock") {
         playerScore++; 
-        console.log("You win! Paper beats Rock.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You win! Paper beats Rock."
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == "paper" && computerChoice == "scissors") {
         computerScore++;
-        console.log("You lose! Paper beats Scissors.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You lose! Paper beats Scissors."
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == "scissors" && computerChoice == "paper") {
         playerScore++; 
-        console.log("You win! Scissors beats Paper.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You win! Scissors beats Paper."
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == "scissors" && computerChoice == "rock") {
         computerScore++;
-        console.log("You lose! rock beats Scissors.\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "You lose! rock beats Scissors."
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
     else if (playerChoice.toLowerCase() == computerChoice) {
-        console.log("Tied!\nScore:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
+        let message = "Tied!"
+        document.getElementById('message').innerHTML = message;
+        document.getElementById('player-score').innerHTML = playerScore;
+        document.getElementById('computer-score').innerHTML = computerScore;
     }
-    return [playerScore, computerScore]
+    scoreCheck();
 }
 
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let currentScore = playRound(playerScore, computerScore);
-        playerScore = currentScore[0];
-        computerScore = currentScore[1];
-    }
+    
+    currentScore = playRound(playerScore, computerScore);
+    playerScore = currentScore[0];
+    computerScore = currentScore[1];
+    
     console.log("The final score is:\nPlayer: " + playerScore + "\nComputer: " + computerScore);
 }
-game();
+
+function scoreCheck() {
+    if (playerScore == 5) {
+        document.getElementById('final-score').innerHTML = "You win!";
+    }
+    else if (computerScore == 5) {
+        document.getElementById('final-score').innerHTML = "Computer wins!";
+    }
+}
+
+

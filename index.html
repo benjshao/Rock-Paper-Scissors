@@ -1,4 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <script src="rock-paper-scissors.js"></script>
+  <head>
+      <script src="rock-paper-scissors.js"></script>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="main">
+      <div class="title">
+        <h1>Rock Paper Scissors!</h1>
+      </div>
+      <div class="buttons">
+        <button id="rock" onClick="playRound(this.id)" class="button-background">
+          <img class="icon" src="images/rock.png" alt="">
+        </button>
+        <button id="paper" onClick="playRound(this.id)" class="button-background">
+          <img class="icon" src="images/paper.png" alt="">
+        </button>
+        <button id="scissors" onClick="playRound(this.id)" class="button-background">
+          <img class="icon" src="images/scissors.png" alt="">
+        </button>
+      </div>
+      <p id="message"></p>
+      <div class="score">
+        <p>Player: </p>
+        <p id="player-score">0</p>
+        <p> - </p>
+        <p>Computer: </p>
+        <p id="computer-score">0</p>
+      </div>
+      <p id="final-score"></p>
+    </main>
+  </body>
 </html>
